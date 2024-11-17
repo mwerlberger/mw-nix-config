@@ -7,6 +7,9 @@
 
   home.packages = with pkgs; [
     pkgs.micromamba
+    pkgs.nerdfonts
+    pkgs.rectangle
+    pkgs.obsidian
   ];
 
   home.sessionVariables = {

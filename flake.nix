@@ -79,7 +79,7 @@
           show-recents = false;
           static-only = false;
           minimize-to-application = true;
-          mru-spaces = false;
+          mru-spaces = true;
           persistent-apps = [
             "/Applications/Nix Apps/WezTerm.app"
             "/Applications/Visual Studio Code.app"
@@ -115,7 +115,7 @@
           "com.apple.mouse.tapBehavior" = 1;
           "com.apple.trackpad.forceClick" = true;
         };
-        loginwindow.LoginwindowText = "MacBook powered by Nix Darwin";
+        loginwindow.LoginwindowText = "MacBook Air powered by Nix Darwin";
         spaces.spans-displays = false;
         trackpad = {
           Clicking = true;
@@ -133,7 +133,19 @@
         pkgs.arc-browser
         pkgs.numi
         pkgs.vlc-bin-universal
+        pkgs.iina
+        pkgs.maccy
+        pkgs.raycast
       ];
+
+      homebrew = {
+        enable = true;
+        # onActivation.cleanup = "uninstall";
+
+        taps = [];
+        brews = ["cowsay"];
+        casks = [];
+      };
     };
   in {
     darwinConfigurations."mw-mb-air" = darwin.lib.darwinSystem {
